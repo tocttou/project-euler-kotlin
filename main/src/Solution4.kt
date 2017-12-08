@@ -1,3 +1,5 @@
+package src
+
 fun main(args: Array<String>) {
     val palindromeSeq = generateSeq().filter { it.toString().isPalindrome() }
     println(palindromeSeq.max())

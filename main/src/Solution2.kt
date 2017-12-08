@@ -1,3 +1,5 @@
+package src
+
 fun main(args: Array<String>) {
     var sum = 0
     fibonacciUntil { if (it % 2 == 0) sum += it }

@@ -1,4 +1,6 @@
-import utils.generatePrimeFactorsWithFrequency
+package src
+
+import src.utils.generatePrimeFactorsWithFrequency
 
 fun main(args: Array<String>) {
     val seq = mutableMapOf<Long, Int>()

@@ -1,4 +1,4 @@
-package utils
+package src.utils
 
 fun generatePrimeFactorsWithFrequency(
         _n: Long,
