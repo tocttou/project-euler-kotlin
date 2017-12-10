@@ -8,7 +8,7 @@ import src.utils.frequencyMapOf
 import src.utils.generatePrimeFactorsWithFrequency
 import kotlin.test.assertEquals
 
-object generatePrimeFactorsWithFrequencyTest : Spek({
+object GeneratePrimeFactorsWithFrequencyTest : Spek({
     given("a Long number") {
         val n = 39L
         on("generating prime factors with frequency") {

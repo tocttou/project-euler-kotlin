@@ -1,11 +1,18 @@
 package src.utils
 
 fun generatePrimeFactorsWithFrequency(
-        _n: Long,
-        action: (FrequencyMap<Long, Int>) -> Unit = {}
+    _n: Number,
+    action: (FrequencyMap<Long, Int>) -> Unit = {}
 ): FrequencyMap<Long, Int>? {
-    var n = _n
-    if (n < 2L) return null
+    when (_n) {
+        is Long -> {
+        }
+        is Int -> {
+        }
+        else -> throw IllegalArgumentException("Only Int and Long are supported.")
+    }
+    var n = _n.toLong()
+    if (n < 2) return null
     val primeFactors = frequencyMapOf<Long, Int>()
     while (n % 2L == 0L) {
         primeFactors.add(2L, 1)

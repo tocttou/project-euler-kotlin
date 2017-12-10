@@ -7,7 +7,7 @@ import org.jetbrains.spek.api.dsl.on
 import src.utils.primesLessThanNumber
 import kotlin.test.assertEquals
 
-object primesLessThanNumberTest : Spek({
+object PrimesLessThanNumberTest : Spek({
     given("a number") {
         val n = 18
         on("generate primeNumbersLessThanNumber") {

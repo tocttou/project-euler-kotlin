@@ -1,0 +1,1 @@
+Some solutions are done in a weird way intentionally. Just doing it to learn Kotlin.
