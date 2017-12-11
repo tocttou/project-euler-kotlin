@@ -1,4 +1,7 @@
-package src.utils
+package src
+
+import src.utils.frequencyMapOf
+import src.utils.generatePrimeFactorsWithFrequency
 
 fun main(args: Array<String>) {
     val gridSize = Pair(20, 20)
