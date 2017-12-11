@@ -28,8 +28,22 @@ object FrequencyMapTest : Spek({
         on("adding element by pair") {
             freqMap.add(Pair(3, 4))
             it("should be equal to the test value") {
-                val testValue2 = frequencyMapOf<Int, Int>(Pair(1, 2), Pair(3, 4))
-                assertEquals(freqMap, testValue2)
+                val testValue = frequencyMapOf<Int, Int>(Pair(1, 2), Pair(3, 4))
+                assertEquals(freqMap, testValue)
+            }
+        }
+        on("reducing an element's frequency by an amount") {
+            freqMap.removeFreq(3, 2)
+            it("should be equal to the test value") {
+                val testValue = frequencyMapOf<Int, Int>(Pair(1, 2), Pair(3, 2))
+                assertEquals(freqMap, testValue)
+            }
+        }
+        on("reducing an element's frequency down to less than 1") {
+            freqMap.removeFreq(3, 2)
+            it("should be equal to the test value") {
+                val testValue = frequencyMapOf<Int, Int>(Pair(1, 2))
+                assertEquals(freqMap, testValue)
             }
         }
     }

@@ -14,6 +14,20 @@ class FrequencyMap<K, Int>(private val b: MutableMap<K, kotlin.Int>)
         }
     }
 
+    fun addAll(iter: Iterable<FrequencyMap<K, kotlin.Int>>) {
+        for (i in iter) {
+            for (j in i.keys) {
+                add(j, i.get(j)!!)
+            }
+        }
+    }
+
+    fun removeFreq(key: K, freq: kotlin.Int = 1) {
+        if (b.get(key) == null || freq < 1) return
+        else if (b.get(key)!! - freq < 1) b.remove(key)
+        b.computeIfPresent(key) { _, b -> b - freq }
+    }
+
     override fun hashCode(): kotlin.Int {
         return super.hashCode()
     }
