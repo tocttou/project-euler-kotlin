@@ -1,18 +1,22 @@
 package src.utils
 
-fun <T> generateCombinations(list: List<T?>, window: Int, withRepetition: Boolean = false)
+fun <T> combinationsOf(
+    list: List<T?>,
+    window: Int = list.count())
     : List<List<T?>> {
+    if (window > list.count()) throw IllegalArgumentException(
+        "Window must be less than or equal to list.count()"
+    )
     val acc = mutableListOf<List<T?>>()
-    val wrapper = WrapperClass(acc)
-    wrapper.withWindow(list, window, withRepetition)
+    val wrapper = CombinationWrapper(acc)
+    wrapper.withWindow(list, window)
     return acc.toList()
 }
 
-class WrapperClass<T>(val collector: MutableList<List<T?>>) {
+class CombinationWrapper<T>(val collector: MutableList<List<T?>>) {
     fun withWindow(
         list: List<T?>,
         window: Int,
-        withRepetition: Boolean,
         tempList: MutableList<T?> = MutableList(window) { null },
         start: Int = 0,
         end: Int = list.count() - 1,
@@ -28,13 +32,11 @@ class WrapperClass<T>(val collector: MutableList<List<T?>>) {
             withWindow(
                 list,
                 window,
-                withRepetition,
                 tempList,
-                if (withRepetition) it else it + 1,
+                it + 1,
                 end,
                 index + 1
             )
         }
-        return
     }
 }
