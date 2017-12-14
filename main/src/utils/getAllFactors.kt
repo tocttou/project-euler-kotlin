@@ -6,7 +6,8 @@ fun getAllFactors(number: Int): List<Int>? {
     var i = 2
     while (i <= Math.sqrt(number.toDouble()).toInt()) {
         if (number % i == 0) {
-            mutableList.add(i); mutableList.add(number / i)
+            mutableList.add(i)
+            if (i != number / i) mutableList.add(number / i)
         }
         i++
     }
