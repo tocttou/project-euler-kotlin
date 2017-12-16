@@ -3,6 +3,13 @@ package src
 import src.utils.pow
 
 fun main(args: Array<String>) {
+    val start = System.currentTimeMillis()
+    println(driver30())
+    val end = System.currentTimeMillis()
+    println("Finished in: ${end - start} ms")
+}
+
+fun driver30(): Int {
     var sum = -1
     for (i in 1..6) { // upper bound found from condition: 9 ^ 5 * i > 10 ^ (i - 1)
         val start = pow(10, i - 1) as Int
@@ -13,10 +20,10 @@ fun main(args: Array<String>) {
             }
         }
     }
-    println(sum)
+    return sum
 }
 
-fun sumDigitsFifthPower(n: Int): Int {
+private fun sumDigitsFifthPower(n: Int): Int {
     var number = n
     var sum = 0
     while (number > 0) {

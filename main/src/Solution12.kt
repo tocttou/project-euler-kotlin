@@ -3,6 +3,13 @@ package src
 import src.utils.generatePrimeFactorsWithFrequency
 
 fun main(args: Array<String>) {
+    val start = System.currentTimeMillis()
+    println(driver12())
+    val end = System.currentTimeMillis()
+    println("Finished in: ${end - start} ms")
+}
+
+fun driver12(): Long {
     var numFactors: Int
     var counter = 2L
     while (true) {
@@ -12,5 +19,5 @@ fun main(args: Array<String>) {
         if (numFactors > 500) break
         counter++
     }
-    println(counter * (counter + 1) / 2)
+    return (counter * (counter + 1) / 2)
 }

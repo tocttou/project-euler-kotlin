@@ -2,11 +2,18 @@ package src
 
 import src.utils.isLeapYear
 
-val monthNumDays = listOf<Int>(
+private val monthNumDays = listOf<Int>(
     31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
 )
 
 fun main(args: Array<String>) {
+    val start = System.currentTimeMillis()
+    println(driver19())
+    val end = System.currentTimeMillis()
+    println("Finished in: ${end - start} ms")
+}
+
+fun driver19(): Int {
     val seq = generateSequence(Triple(1, 1901, 31)) {
         val nextMonth = (it.first % 12) + 1
         val nextYear = if (nextMonth == 1) it.second + 1 else it.second
@@ -24,5 +31,5 @@ fun main(args: Array<String>) {
             (dayOfCurrentSunday + 35) % s.third
         } else (dayOfCurrentSunday + 28) % s.third
     }
-    println(result)
+    return result
 }

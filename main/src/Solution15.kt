@@ -4,6 +4,13 @@ import src.utils.frequencyMapOf
 import src.utils.generatePrimeFactorsWithFrequency
 
 fun main(args: Array<String>) {
+    val start = System.currentTimeMillis()
+    println(driver15())
+    val end = System.currentTimeMillis()
+    println("Finished in: ${end - start} ms")
+}
+
+fun driver15(): Long {
     val gridSize = Pair(20, 20)
     val numeratorSize = gridSize.first + gridSize.second
     val denominatorSize = gridSize.first
@@ -25,5 +32,5 @@ fun main(args: Array<String>) {
     for (i in freqMapNumerator.keys) {
         product *= Math.pow(i.toDouble(), freqMapNumerator.get(i)!!.toDouble()).toLong()
     }
-    println(product)
+    return product
 }

@@ -1,6 +1,13 @@
 package src
 
 fun main(args: Array<String>) {
+    val start = System.currentTimeMillis()
+    println(driver9())
+    val end = System.currentTimeMillis()
+    println("Finished in: ${end - start} ms")
+}
+
+fun driver9(): Int {
     val n = 1000
     var a = 0
     var b = 0
@@ -19,10 +26,10 @@ fun main(args: Array<String>) {
             }
         }
     }
-    println(a * b * c)
+    return a * b * c
 }
 
-fun Int.isPerfectSquare(): Boolean {
+private fun Int.isPerfectSquare(): Boolean {
     val sqrt = Math.sqrt(this.toDouble()).toInt()
     return sqrt * sqrt == this
 }

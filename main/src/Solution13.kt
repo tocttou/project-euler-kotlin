@@ -3,6 +3,13 @@ package src
 import java.io.File
 
 fun main(args: Array<String>) {
+    val start = System.currentTimeMillis()
+    println(driver13())
+    val end = System.currentTimeMillis()
+    println("Finished in: ${end - start} ms")
+}
+
+fun driver13(): String {
     val inputStream = File("main/src/data/Problem13Data.txt").inputStream()
     val contents = inputStream.bufferedReader().use { it.readText() }
     val allNumbersSplit = contents
@@ -27,6 +34,5 @@ fun main(args: Array<String>) {
         placeWiseSumWithCarry.add(carry % 10)
         carry /= 10
     }
-    val sum = placeWiseSumWithCarry.reversed().joinToString("")
-    println(sum)
+    return placeWiseSumWithCarry.reversed().joinToString("")
 }

@@ -4,6 +4,13 @@ import java.io.File
 import kotlin.math.max
 
 fun main(args: Array<String>) {
+    val start = System.currentTimeMillis()
+    println(driver18())
+    val end = System.currentTimeMillis()
+    println("Finished in: ${end - start} ms")
+}
+
+fun driver18(): Int {
     val inputStream = File("main/src/data/Problem18Data.txt").inputStream()
     val contents = inputStream.bufferedReader().use { it.readText() }
         .split("\n")
@@ -19,5 +26,5 @@ fun main(args: Array<String>) {
             contents[i][j] += max(contents[i + 1][j], contents[i + 1][j + 1])
         }
     }
-    println(contents[0][0])
+    return contents[0][0]
 }

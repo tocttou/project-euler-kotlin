@@ -1,14 +1,21 @@
 package src
 
 fun main(args: Array<String>) {
+    val start = System.currentTimeMillis()
+    println(driver17())
+    val end = System.currentTimeMillis()
+    println("Finished in: ${end - start} ms")
+}
+
+fun driver17(): Int {
     var letterSum = 0
     for (i in 1..1000) {
         letterSum += getWordForNumber(i)!!.length
     }
-    println(letterSum)
+    return letterSum
 }
 
-val wordMapOne = mapOf<Int, String>(
+private val wordMapOne = mapOf<Int, String>(
     Pair(1, "One"),
     Pair(2, "Two"),
     Pair(3, "Three"),
@@ -20,7 +27,7 @@ val wordMapOne = mapOf<Int, String>(
     Pair(9, "Nine")
 )
 
-val wordMapTwo = mapOf<Int, String>(
+private val wordMapTwo = mapOf<Int, String>(
     Pair(10, "Ten"),
     Pair(11, "Eleven"),
     Pair(12, "Twelve"),
@@ -33,7 +40,7 @@ val wordMapTwo = mapOf<Int, String>(
     Pair(19, "Nineteen")
 )
 
-val wordMapThree = mapOf<Int, String>(
+private val wordMapThree = mapOf<Int, String>(
     Pair(20, "Twenty"),
     Pair(30, "Thirty"),
     Pair(40, "Forty"),
@@ -44,12 +51,12 @@ val wordMapThree = mapOf<Int, String>(
     Pair(90, "Ninety")
 )
 
-val wordMapFour = mapOf<Int, String>(
+private val wordMapFour = mapOf<Int, String>(
     Pair(100, "Hundred"),
     Pair(1000, "Thousand")
 )
 
-fun getWordForNumber(number: Int): String? {
+private fun getWordForNumber(number: Int): String? {
     val numDigits = number.toString().length
     if (number == 1000) return "One${wordMapFour.get(1000)!!}"
     if (numDigits == 1) return wordMapOne.get(number)!!
@@ -58,7 +65,7 @@ fun getWordForNumber(number: Int): String? {
     return null
 }
 
-fun getThreeDigitRepr(number: Int): String {
+private fun getThreeDigitRepr(number: Int): String {
     val lValue = "${wordMapOne.get(number / 100)}Hundred"
     val rValue = if (number % 100 == 0) {
         ""
@@ -70,7 +77,7 @@ fun getThreeDigitRepr(number: Int): String {
     return lValue + rValue
 }
 
-fun getTwoDigitRepr(number: Int): String {
+private fun getTwoDigitRepr(number: Int): String {
     if (number >= 10 && number <= 19) return wordMapTwo.get(number)!!
     val lValue = wordMapThree.get(number - (number % 10))
     val rValue = if (number % 10 == 0) "" else wordMapOne.get(number % 10)

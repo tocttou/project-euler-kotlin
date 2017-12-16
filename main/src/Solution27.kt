@@ -3,6 +3,13 @@ package src
 import src.utils.primesLessThanNumber
 
 fun main(args: Array<String>) {
+    val start = System.currentTimeMillis()
+    println(driver27())
+    val end = System.currentTimeMillis()
+    println("Finished in: ${end - start} ms")
+}
+
+fun driver27(): Int {
     var max = Pair<List<Int?>, Int>(listOf(0), 0)
     for (i in -999..999 step 2) {
         for (j in primesLessThanNumber(1000)) {
@@ -12,10 +19,10 @@ fun main(args: Array<String>) {
             if (numPrimes > max.second) max = Pair(listOf(i, j), numPrimes)
         }
     }
-    println(max.first[0]!! * max.first[1]!!)
+    return max.first[0]!! * max.first[1]!!
 }
 
-fun generateQuadraticSeq(a: Int, b: Int): Sequence<Long> {
+private fun generateQuadraticSeq(a: Int, b: Int): Sequence<Long> {
     var counter = -1L
     val seq = generateSequence {
         counter++
@@ -24,7 +31,7 @@ fun generateQuadraticSeq(a: Int, b: Int): Sequence<Long> {
     return seq
 }
 
-fun Long.isPrime(): Boolean {
+private fun Long.isPrime(): Boolean {
     if (this < 2) return false
     if (this == 2L || this == 3L) return true
     if (this % 2 == 0L || this % 3 == 0L) return false

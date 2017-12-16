@@ -3,6 +3,13 @@ package src
 import java.io.File
 
 fun main(args: Array<String>) {
+    val start = System.currentTimeMillis()
+    println(driver11())
+    val end = System.currentTimeMillis()
+    println("Finished in: ${end - start} ms")
+}
+
+fun driver11(): Int? {
     val d = 20
     val inputStream = File("main/src/data/Problem11Data.txt").inputStream()
     val content = inputStream.bufferedReader().use { it.readText() }
@@ -30,10 +37,10 @@ fun main(args: Array<String>) {
         maxOfWindowProducts(leftDiagonalSplit, 4),
         maxOfWindowProducts(rightDiagonalSplit, 4)
     ).filterNotNull().max()
-    println(maxProductOfWindowLengthFour)
+    return maxProductOfWindowLengthFour
 }
 
-fun maxOfWindowProducts(splits: List<List<Int>>, windowLength: Int): Int? {
+private fun maxOfWindowProducts(splits: List<List<Int>>, windowLength: Int): Int? {
     return splits.toMutableList().map {
         it.windowed(windowLength).map { v ->
             v.reduce { acc, i -> acc * i }
@@ -41,13 +48,13 @@ fun maxOfWindowProducts(splits: List<List<Int>>, windowLength: Int): Int? {
     }.flatten().max()
 }
 
-fun reversedGridByRow(grid: List<List<Int>>): List<List<Int>> {
+private fun reversedGridByRow(grid: List<List<Int>>): List<List<Int>> {
     val list = mutableListOf<List<Int>>()
     grid.map { list.add(it.reversed()) }
     return list.toList()
 }
 
-fun replaceIndexPairsWithValue(
+private fun replaceIndexPairsWithValue(
     grid: List<List<Int>>,
     indexList: List<MutableList<Pair<Int, Int>>>
 ): MutableList<MutableList<Int>> {
@@ -62,7 +69,7 @@ fun replaceIndexPairsWithValue(
     return list
 }
 
-fun generateIndexList(size: Int): List<MutableList<Pair<Int, Int>>> {
+private fun generateIndexList(size: Int): List<MutableList<Pair<Int, Int>>> {
     val lValue = (0..(size - 1)).map {
         generateListOfPairs(0, it)
     }.toMutableList()
@@ -72,7 +79,7 @@ fun generateIndexList(size: Int): List<MutableList<Pair<Int, Int>>> {
     return lValue + rValue
 }
 
-fun generateListOfPairs(_anchor: Int, _sum: Int, direction: String = "left")
+private fun generateListOfPairs(_anchor: Int, _sum: Int, direction: String = "left")
     : MutableList<Pair<Int, Int>> {
     val list = mutableListOf<Pair<Int, Int>>()
     var anchor = _anchor
