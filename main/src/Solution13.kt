@@ -34,5 +34,8 @@ fun driver13(): String {
         placeWiseSumWithCarry.add(carry % 10)
         carry /= 10
     }
-    return placeWiseSumWithCarry.reversed().joinToString("")
+    return placeWiseSumWithCarry
+        .reversed()
+        .subList(0, 10)
+        .joinToString("")
 }

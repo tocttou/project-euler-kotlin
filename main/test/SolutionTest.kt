@@ -28,6 +28,7 @@ import src.driver28
 import src.driver29
 import src.driver3
 import src.driver30
+import src.driver31
 import src.driver4
 import src.driver5
 import src.driver6
@@ -42,181 +43,187 @@ object SolutionTest : Spek({
         on("running Solution1") {
             val solution = driver1()
             it("should be equal to the test value") {
-                assertEquals(solution, 233168)
+                assertEquals(233168, solution)
             }
         }
         on("running Solution2") {
             val solution = driver2()
             it("should be equal to the test value") {
-                assertEquals(solution, 4613732)
+                assertEquals(4613732, solution)
             }
         }
         on("running Solution3") {
             val solution = driver3()
             it("should be equal to the test value") {
-                assertEquals(solution, 6857)
+                assertEquals(6857, solution)
             }
         }
         on("running Solution4") {
             val solution = driver4()
             it("should be equal to the test value") {
-                assertEquals(solution, 906609)
+                assertEquals(906609, solution)
             }
         }
         on("running Solution5") {
             val solution = driver5()
             it("should be equal to the test value") {
-                assertEquals(solution, 232792560)
+                assertEquals(232792560, solution)
             }
         }
         on("running Solution6") {
             val solution = driver6()
             it("should be equal to the test value") {
-                assertEquals(solution, 25164150)
+                assertEquals(25164150, solution)
             }
         }
         on("running Solution7") {
             val solution = driver7()
             it("should be equal to the test value") {
-                assertEquals(solution, 104743)
+                assertEquals(104743, solution)
             }
         }
         on("running Solution8") {
             val solution = driver8()
             it("should be equal to the test value") {
-                assertEquals(solution, 23514624000)
+                assertEquals(23514624000, solution)
             }
         }
         on("running Solution9") {
             val solution = driver9()
             it("should be equal to the test value") {
-                assertEquals(solution, 31875000)
+                assertEquals(31875000, solution)
             }
         }
         on("running Solution10") {
             val solution = driver10()
             it("should be equal to the test value") {
-                assertEquals(solution, 142913828922)
+                assertEquals(142913828922, solution)
             }
         }
         on("running Solution11") {
             val solution = driver11()
             it("should be equal to the test value") {
-                assertEquals(solution, 70600674)
+                assertEquals(70600674, solution)
             }
         }
         on("running Solution12") {
             val solution = driver12()
             it("should be equal to the test value") {
-                assertEquals(solution, 76576500)
+                assertEquals(76576500, solution)
             }
         }
         on("running Solution13") {
             val solution = driver13()
             it("should be equal to the test value") {
-                assert(solution == "5537376230")
+                assertEquals("5537376230", solution)
             }
         }
         on("running Solution14") {
             val solution = driver14()
             it("should be equal to the test value") {
-                assertEquals(solution, 837799)
+                assertEquals(837799, solution)
             }
         }
         on("running Solution15") {
             val solution = driver15()
             it("should be equal to the test value") {
-                assertEquals(solution, 137846528820)
+                assertEquals(137846528820, solution)
             }
         }
         on("running Solution16") {
             val solution = driver16()
             it("should be equal to the test value") {
-                assertEquals(solution, BigInteger("1366"))
+                assertEquals(BigInteger("1366"), solution)
             }
         }
         on("running Solution17") {
             val solution = driver17()
             it("should be equal to the test value") {
-                assertEquals(solution, 21124)
+                assertEquals(21124, solution)
             }
         }
         on("running Solution18") {
             val solution = driver18()
             it("should be equal to the test value") {
-                assertEquals(solution, 1074)
+                assertEquals(1074, solution)
             }
         }
         on("running Solution19") {
             val solution = driver19()
             it("should be equal to the test value") {
-                assertEquals(solution, 171)
+                assertEquals(171, solution)
             }
         }
         on("running Solution20") {
             val solution = driver20()
             it("should be equal to the test value") {
-                assertEquals(solution, BigInteger("648"))
+                assertEquals(BigInteger("648"), solution)
             }
         }
         on("running Solution21") {
             val solution = driver21()
             it("should be equal to the test value") {
-                assertEquals(solution, 31626)
+                assertEquals(31626, solution)
             }
         }
         on("running Solution22") {
             val solution = driver22()
             it("should be equal to the test value") {
-                assertEquals(solution, 871198282)
+                assertEquals(871198282, solution)
             }
         }
         on("running Solution23") {
             val solution = driver23()
             it("should be equal to the test value") {
-                assertEquals(solution, 4179871)
+                assertEquals(4179871, solution)
             }
         }
         on("running Solution24") {
             val solution = driver24()
             it("should be equal to the test value") {
-                assertEquals(solution, "2783915460")
+                assertEquals("2783915460", solution)
             }
         }
         on("running Solution25") {
             val solution = driver25()
             it("should be equal to the test value") {
-                assertEquals(solution, 4782)
+                assertEquals(4782, solution)
             }
         }
         on("running Solution26") {
             val solution = driver26()
             it("should be equal to the test value") {
-                assertEquals(solution, 983)
+                assertEquals(983, solution)
             }
         }
         on("running Solution27") {
             val solution = driver27()
             it("should be equal to the test value") {
-                assertEquals(solution, -59231)
+                assertEquals(-59231, solution)
             }
         }
         on("running Solution28") {
             val solution = driver28()
             it("should be equal to the test value") {
-                assertEquals(solution, 669171001)
+                assertEquals(669171001, solution)
             }
         }
         on("running Solution29") {
             val solution = driver29()
             it("should be equal to the test value") {
-                assertEquals(solution, 9183)
+                assertEquals(9183, solution)
             }
         }
         on("running Solution30") {
             val solution = driver30()
             it("should be equal to the test value") {
-                assertEquals(solution, 443839)
+                assertEquals(443839, solution)
+            }
+        }
+        on("running Solution31") {
+            val solution = driver31()
+            it("should be equal to the test value") {
+                assertEquals(73682, solution)
             }
         }
     }
