@@ -29,6 +29,7 @@ import src.driver29
 import src.driver3
 import src.driver30
 import src.driver31
+import src.driver32
 import src.driver4
 import src.driver5
 import src.driver6
@@ -224,6 +225,12 @@ object SolutionTest : Spek({
             val solution = driver31()
             it("should be equal to the test value") {
                 assertEquals(73682, solution)
+            }
+        }
+        on("running Solution32") {
+            val solution = driver32()
+            it("should be equal to the test value") {
+                assertEquals(45228, solution)
             }
         }
     }
